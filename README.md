@@ -14,7 +14,7 @@ Membros:
 - Maisa Rodrigues Pires
 - Milena de Sousa Borges
 - Paula Borges
-- Renatta  Siqueira Silva
+- Renatta Siqueira Silva
 - Sarah Affonco
 - Taís Costa
 - Yasmin Tavares Feitosa
