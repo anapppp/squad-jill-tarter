@@ -8,8 +8,7 @@ print (palavra)
 
 tentativas = 0
 
-chances = 
-
+chances = 6
 letras_escolhidas = []
 
 estado_atual = ["_"] * len(palavra)
