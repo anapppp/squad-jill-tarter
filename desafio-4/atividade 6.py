@@ -16,7 +16,7 @@ estado_atual = ["_"] * len(palavra)
 print ("############################### ")
 print ("### Jogo da forca em Python ### ")
 print ("############################### ")
-print ("Seu objetivo é tentar acertar a palavra secreta * DICA: é um animal* ")
+print ("Seu objetivo é tentar acertar a palavra secreta ~ DICA: é um animal ~ ")
 print ("Caso você erre, você percerá uma chance, você tem no máximo", chances, "tentativas")
 
 while tentativas < chances and ''.join(estado_atual) != palavra:
