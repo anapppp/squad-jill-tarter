@@ -1,3 +1,6 @@
+## Receba do usuário a quantidade de litros de combustível consumidos e a distancia percorrida.
+## Calcule e imprima o consumo médio em km-l.
+
 km = int(input("Digite quantos km você rodou: "))
 l= int(input("Digite quantos litros de combustível você gastou: "))
 

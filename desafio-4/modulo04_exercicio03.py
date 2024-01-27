@@ -1,3 +1,6 @@
+##Escreva um script que pergunta ao usuário se ele deseja converter uma temperatura degrau Celsius
+## para Fahrenheit ou vice-versa.Para cada opção,crie uma função.
+
 def conversao_celsius_fahrenheit():
         cf = (temperatura * (9/5)) + 32
         print(cf)
