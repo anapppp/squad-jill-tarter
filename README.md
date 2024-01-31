@@ -19,14 +19,12 @@ Membros:
 - Taís Costa
 - Yasmin Tavares Feitosa
 
-## Desafio 1
-[Diretório](./desafio-1/)
+[Desafio 1 (Semana 3)](./Desafio-1/)
 
-## Desafio 2
-[Diretório](./desafio-2/)
+[Desafio 2 (Semana 4)](./Desafio-2/)
 
-## Desafio 3
-[Diretório](./desafio-3/)
+[Desafio 3 (Semana 5)](./Desafio-3/)
 
-## Desafio 4
-[Diretório](./desafio-4/)
+[Desafio 4 (Semana 5)](./Desafio-4/)
+
+[Desafio 5 (Semana 9)](./Desafio-5/)
