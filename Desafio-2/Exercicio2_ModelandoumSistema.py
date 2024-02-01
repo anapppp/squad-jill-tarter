@@ -9,3 +9,60 @@
 # Clientes homens por enquanto não têm direito a cheque especial.
 #Para modelar seu sistema, utilize obrigatoriamente os conceitos
 #"classe", "herança", "propriedades", "encapsulamento" e "classe abstrata".
+
+from abc import ABC, abstractmethod
+class BaseCliente(ABC):
+    def __init__(self, nome, telefone, renda_mensal):
+        self.nome = nome
+        self.telefone = telefone
+        self.renda_mensal = renda_mensal
+
+    @abstractmethod
+    def cheque_especial(self):
+        pass
+
+
+class ClienteM(BaseCliente):
+    def __init__(self, nome, telefone, renda_mensal):
+        super().__init__(nome, telefone, renda_mensal)
+
+    def cheque_especial(self):
+        return True
+
+
+class ClienteH(BaseCliente):
+    def __init__(self, nome, telefone, renda_mensal):
+        super().__init__(nome, telefone, renda_mensal)
+
+    def cheque_especial(self):
+        return False
+
+
+class ContaCorrente:
+    def __init__(self, clientes):
+        self.clientes = clientes
+        self.saldo = 0
+        self.operacoes = []
+
+    def deposito(self, valor):
+        self.saldo += valor
+        self.operacoes.append(f"Depósito de R${valor:.2f} realizado")
+        print('DEPÓSITO REALIZADO!')
+
+    def saque(self, valor):
+        if self.tem_saldo_suficiente(valor):
+            self.saldo -= valor
+            self.operacoes.append(f"Saque de R${valor:.2f} realizado")
+            print("SAQUE REALIZADO!")
+
+
+
+
+cliente_m = ClienteM("Paula", "911223344", 20000)
+cliente_h = ClienteH("Paulo", "955667788", 700)
+
+conta_paula = ContaCorrente([cliente_m])
+conta_paulo = ContaCorrente([cliente_h])
+
+
+
