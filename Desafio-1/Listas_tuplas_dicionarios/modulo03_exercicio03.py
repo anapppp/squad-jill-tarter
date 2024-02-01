@@ -1,6 +1,5 @@
-## Crie um dicionário representando um carrinho de compras. 
-##Adicione produtos(chaves) equantidades(valores) ao carrinho. Calcule o total do carrinho de compra.
-
+#Crie um dicionário representando um carrinho de compras.
+# Adicione produtos(chaves) equantidades(valores) ao carrinho. Calcule o total do carrinho de compra.
 
 carrinho = {}
 
