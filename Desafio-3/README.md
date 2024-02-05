@@ -3,6 +3,7 @@
 ExercícioOrientaçãoaObjetoemPython:
   - Ana Paula
   - Yasmin Tavares
+  - Tais Costa
 
 ExercícioBancodeDados:
  - Sarah Affonco 
