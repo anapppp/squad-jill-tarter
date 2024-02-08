@@ -22,18 +22,28 @@ envolvido e quantidade de produtos comprados.
 from uuid import uuid4
 from modules import clientes, produtos, transacoes
 
+# Cliente
 novo_cliente = clientes.Cliente(
     id=uuid4(),
     nome="Maria",
     telefone="123456",
     endereco="Rua das margaridas")
-
-
 print(novo_cliente)
 
+# Fornecedor
+novo_fornecedor = produtos.Fornecedor(
+    id=uuid4(),
+    nome="Granja Bananal"
+)
+print(novo_fornecedor)
 
-banana = produtos.Produto(id=uuid4(), nome="Banana", qtd_estoque="100")
+# Produto
+banana = produtos.Produto(
+    id=uuid4(),
+    nome="Banana",
+    qtd_estoque="100")
 print(banana)
 banana.comprar(10)
-
+print(banana)
+banana.adicionar_fornecedor(novo_fornecedor)
 print(banana)
