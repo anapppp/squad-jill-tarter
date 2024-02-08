@@ -72,6 +72,29 @@ cursor.execute("CREATE TABLE Produtos_fornecedores( id_relacionamento INTEGER PR
 # Inserindo Produtos_fornecedores individualmente para teste
 dados = cursor.execute ('INSERT INTO Produtos_fornecedores (produto_id, fornecedor_id) VALUES (5,3)')
 
+
+# Questão 3: 
+#Listar produtos em estoque
+dados = cursor.execute('SELECT * FROM Produtos WHERE quantidade_estoque > 0')
+for produto in dados:
+    print(produto)
+
+#Encontrar as vendas realizadas por um cliente específico
+dados = cursor.execute('SELECT * FROM Vendas WHERE cliente_id = 1')
+for Vendas in dados:
+  print(Vendas)  
+
+#Calcular o total de vendas por categoria de produto:
+dados = cursor.execute('SELECT Produtos.categoria, SUM(Produtos.preco * Vendas.quantidade_compra) AS totalVendas FROM Produtos JOIN Vendas ON Produtos.id = Vendas.produto_id GROUP BY Produtos.categoria ')
+for totalVendas in dados:
+  print(totalVendas)   
+
+#Identificar os produtos mais vendidos:
+dados = cursor.execute('SELECT Produtos.nome, SUM(Vendas.quantidade_compra) AS total_vendas FROM Produtos JOIN Vendas ON Produtos.id = Vendas.produto_id GROUP BY Produtos.nome ORDER BY total_vendas DESC')
+for total_vendas in dados:
+   print(total_vendas) 
+
+
 # Fecha a conexão
 conexao.commit()
 cursor.close()
