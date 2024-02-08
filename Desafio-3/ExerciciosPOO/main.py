@@ -15,3 +15,25 @@ estoque é reduzida.
 realizadas, incluindo detalhes como data da compra, cliente
 envolvido e quantidade de produtos comprados.
 """
+
+
+# Criar classes
+# Usar Casse, Herança, Propriedades, encapsulamento e classe abstrata
+from uuid import uuid4
+from modules import clientes, produtos, transacoes
+
+novo_cliente = clientes.Cliente(
+    id=uuid4(),
+    nome="Maria",
+    telefone="123456",
+    endereco="Rua das margaridas")
+
+
+print(novo_cliente)
+
+
+banana = produtos.Produto(id=uuid4(), nome="Banana", qtd_estoque="100")
+print(banana)
+banana.comprar(10)
+
+print(banana)
