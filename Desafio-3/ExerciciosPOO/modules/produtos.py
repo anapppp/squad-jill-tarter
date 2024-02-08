@@ -1,4 +1,4 @@
-import json
+from json import dumps
 
 
 class Fornecedor():
@@ -7,7 +7,7 @@ class Fornecedor():
         self.nome = nome
 
     def __str__(self):
-        return json.dumps({
+        return dumps({
             "id": str(self.id),
             "nome": self.nome
         })
@@ -21,14 +21,14 @@ class Produto():
         self.fornecedores = []
 
     def __str__(self):
-        return json.dumps({
+        return dumps({
             "id": str(self.id),
             "nome": self.nome,
             "qtd_estoque": str(self.qtd_estoque),
             "fornecedores_nome": [str(fornecedor.nome) for fornecedor in self.fornecedores]
         })
 
-    def comprar(self, quantidade):
+    def retirar_de_estoque(self, quantidade):
         if quantidade > self.qtd_estoque:
             print(
                 f"A quantidade do produto {self.nome} em estoque é insuficiente")

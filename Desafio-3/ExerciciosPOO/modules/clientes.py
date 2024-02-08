@@ -1,4 +1,4 @@
-import json
+from json import dumps
 
 
 class Cliente():
@@ -9,7 +9,7 @@ class Cliente():
         self.endereco = endereco
 
     def __str__(self):
-        return json.dumps({
+        return dumps({
             "id": str(self.id),
             "nome": self.nome,
             "telefone": self.telefone,

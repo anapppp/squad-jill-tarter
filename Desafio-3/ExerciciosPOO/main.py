@@ -28,22 +28,31 @@ novo_cliente = clientes.Cliente(
     nome="Maria",
     telefone="123456",
     endereco="Rua das margaridas")
-print(novo_cliente)
 
 # Fornecedor
 novo_fornecedor = produtos.Fornecedor(
     id=uuid4(),
     nome="Granja Bananal"
 )
-print(novo_fornecedor)
 
 # Produto
 banana = produtos.Produto(
     id=uuid4(),
     nome="Banana",
     qtd_estoque="100")
-print(banana)
-banana.comprar(10)
-print(banana)
+
+maca = produtos.Produto(
+    id=uuid4(),
+    nome="Maçã",
+    qtd_estoque="150")
+
 banana.adicionar_fornecedor(novo_fornecedor)
-print(banana)
+maca.adicionar_fornecedor(novo_fornecedor)
+
+# Transacao
+lista_de_compras = [(banana, 20), (maca, 10)]
+
+nova_transacao = transacoes.Compra(
+    id=uuid4(), cliente=novo_cliente, lista_compras=lista_de_compras)
+
+print(nova_transacao)
