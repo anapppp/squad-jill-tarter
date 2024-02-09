@@ -94,6 +94,24 @@ dados = cursor.execute('SELECT Produtos.nome, SUM(Vendas.quantidade_compra) AS t
 for total_vendas in dados:
    print(total_vendas) 
 
+# Atualizar a quantidade em estoque do produto
+dados = cursor.execute("UPDATE Produtos SET quantidade_estoque = quantidade_estoque - 1 WHERE id = 2")
+for produto in dados:
+   print(produto) 
+
+# Atualizar o telefone de um cliente
+dados = cursor.execute('UPDATE Clientes SET telefone = "39815150" WHERE id = 4')
+for i in dados:
+   print("teste telefone") 
+   print(i) 
+
+# Excluir o cliente da tabela Clientes
+cursor.execute("DELETE FROM Clientes WHERE id=2")
+dados_clientes = cursor.execute("SELECT * FROM Clientes")
+print("Cliente removido com sucesso:")
+for cliente in dados_clientes:
+    print(cliente)
+
 
 # Fecha a conexão
 conexao.commit()
