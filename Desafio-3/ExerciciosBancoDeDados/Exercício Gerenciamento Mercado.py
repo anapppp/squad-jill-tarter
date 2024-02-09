@@ -101,9 +101,6 @@ for produto in dados:
 
 # Atualizar o telefone de um cliente
 dados = cursor.execute('UPDATE Clientes SET telefone = "39815150" WHERE id = 4')
-for i in dados:
-   print("teste telefone") 
-   print(i) 
 
 # Excluir o cliente da tabela Clientes
 cursor.execute("DELETE FROM Clientes WHERE id=2")
