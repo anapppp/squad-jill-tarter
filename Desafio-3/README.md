@@ -8,3 +8,4 @@ ExercícioOrientaçãoaObjetoemPython:
 ExercícioBancodeDados:
  - Sarah Affonco 
  - Paula Borges
+ - Giovanna Castro
