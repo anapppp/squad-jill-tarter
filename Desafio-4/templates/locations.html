@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row">  
+  <h1 class="location">Localizações - Rick and Morty</h1>
+</div>
+<table class ="table">
+  <thead>
+    <tr>
+     
+      <th>Nome</th>
+      <th>Tipo</th>
+      <th>Dimensão</th>
+      <th>Link perfil localização</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for location in locations %}
+    <tr>
+      <td>"{{location.name}}"</td>
+      <td>"{{location.type}}"</td>
+      <td>"{{location.dimension}}"</td>
+      <td><a href="/location/{{location.id}}">
+        Ver perfil da localização</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

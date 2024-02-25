@@ -39,3 +39,22 @@ def get_list_characters():
             }
             characters_list.append(character_dict)
     return {"characters": characters_list}
+
+@app.route("/locations")
+def get_locations():
+    url = "https://rickandmortyapi.com/api/location/"
+    response = urllib.request.urlopen(url)
+    location_data = response.read()
+    locations_dict = json.loads(location_data)
+    
+    locations_list = []
+    for location in locations_dict["results"]:
+        location_dict = {
+            "name": location["name"],
+            "type": location["type"],
+            "dimension": location["dimension"],
+            "id": location["id"]
+        }
+        locations_list.append(location_dict)  
+
+    return render_template("locations.html", locations=locations_list)
