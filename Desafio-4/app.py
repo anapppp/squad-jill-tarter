@@ -63,15 +63,38 @@ def get_locations():
     return render_template("locations.html", locations=locations_list)
 
 
-@app.route("/episodes")  # SARAH DEVE COMPLETAR
-def get_episodes():
-    return "Episodios"
-
-
 @app.route("/locations/<id>")  # MAISA DEVE COMPLETAR
 def get_location(id):
     url = "https://rickandmortyapi.com/api/location/" + id
     return url
+
+@app.route("/episodes") #SARAH
+def get_list_espisodes():
+    url = "https://rickandmortyapi.com/api/episode"
+    response = urllib.request.urlopen(url)
+    episodes_data = response.read()    
+    dict = json.loads(episodes_data)
+        
+    espisodes_list = []
+    for episode in dict["results"]:
+            episodes_info = {
+                "Nome": episode["name"],
+                "Data de Lançamento": episode["air_date"],
+                "Codigo": episode["id"],
+                "Episódio": episode["episode"],
+                }
+            espisodes_list.append(episodes_info)
+        
+    return {"episodes": espisodes_list}
+
+@app.route("/episodios")
+def get_list_episodes_page():
+    url = "https://rickandmortyapi.com/api/episode"
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    dict = json.loads(data)
+
+    return render_template("episodes.html", episodes_list=dict["results"])
 
 
 @app.route("/episodes/<id>")  # ANA PAULA DEVE COMPLETAR
