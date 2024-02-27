@@ -24,24 +24,24 @@ def get_profile(id):
     return render_template("profile.html", profile=dict)
 
 
-@app.route("/lista")
-def get_list_characters():
-    url = "https://rickandmortyapi.com/api/character/"
-    response = urllib.request.urlopen(url)
-    characters = response.read()
-    dict = json.loads(characters)
+# @app.route("/profile-json")
+# def get_list_characters():
+#     url = "https://rickandmortyapi.com/api/character/"
+#     response = urllib.request.urlopen(url)
+#     characters = response.read()
+#     dict = json.loads(characters)
 
-    characters_list = []
-    for character in dict["results"]:
-        character_dict = {
-            "Nome": character["name"],
-            "Espécie": character["species"],
-            "Gênero": character["gender"],
-            "Origem": character["origin"]["name"],
-            "Localização": character["location"]["name"],
-        }
-        characters_list.append(character_dict)
-    return {"characters": characters_list}
+#     characters_list = []
+#     for character in dict["results"]:
+#         character_dict = {
+#             "Nome": character["name"],
+#             "Espécie": character["species"],
+#             "Gênero": character["gender"],
+#             "Origem": character["origin"]["name"],
+#             "Localização": character["location"]["name"],
+#         }
+#         characters_list.append(character_dict)
+#     return {"characters": characters_list}
 
 
 @app.route("/locations")   # PAULA PRECISA TERMINAR
@@ -63,41 +63,47 @@ def get_locations():
     return render_template("locations.html", locations=locations_list)
 
 
-@app.route("/locations/<id>")  # MAISA DEVE COMPLETAR
+@app.route("/location/<id>")
 def get_location(id):
     url = "https://rickandmortyapi.com/api/location/" + id
-    return url
-
-@app.route("/episodes") #SARAH
-def get_list_espisodes():
-    url = "https://rickandmortyapi.com/api/episode"
     response = urllib.request.urlopen(url)
-    episodes_data = response.read()    
-    dict = json.loads(episodes_data)
-        
-    espisodes_list = []
-    for episode in dict["results"]:
-            episodes_info = {
-                "Nome": episode["name"],
-                "Data de Lançamento": episode["air_date"],
-                "Codigo": episode["id"],
-                "Episódio": episode["episode"],
-                }
-            espisodes_list.append(episodes_info)
-        
-    return {"episodes": espisodes_list}
+    data = response.read()
+    dict = json.loads(data)
+    return render_template("location.html", location=dict)
 
-@app.route("/episodios")
-def get_list_episodes_page():
+
+# @app.route("/episodes-json")
+# def get_list_espisodes():
+#     url = "https://rickandmortyapi.com/api/episode"
+#     response = urllib.request.urlopen(url)
+#     episodes_data = response.read()
+#     dict = json.loads(episodes_data)
+
+#     espisodes_list = []
+#     for episode in dict["results"]:
+#         episodes_info = {
+#             "Nome": episode["name"],
+#             "Data de Lançamento": episode["air_date"],
+#             "Codigo": episode["id"],
+#             "Episódio": episode["episode"],
+#         }
+#         espisodes_list.append(episodes_info)
+#     return {"episodes": espisodes_list}
+
+
+@app.route("/episodes")
+def get_episodes():
     url = "https://rickandmortyapi.com/api/episode"
     response = urllib.request.urlopen(url)
     data = response.read()
     dict = json.loads(data)
-
     return render_template("episodes.html", episodes_list=dict["results"])
 
 
-@app.route("/episodes/<id>")  # ANA PAULA DEVE COMPLETAR
+@app.route("/episode/<id>")
 def get_episode(id):
     url = "https://rickandmortyapi.com/api/episode/" + id
-    return url
+    response = urllib.request.urlopen(url)
+    data = response.read()
+    dict = json.loads(data)
+    return render_template("episode.html", episode=dict)

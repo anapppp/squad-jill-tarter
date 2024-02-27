@@ -12,7 +12,7 @@
             <ul class="list-group">
                 {% for character in episode.characters %}
                 <li class="list-group-item">
-                    <a href="/profile/{{ character.split('/')[-1] }}" class="card-link">{{ character }}</a>
+                    <a href="/profile/{{ character.split('/')[-1] }}" class="card-link">Personagem ID:{{ character.split('/')[-1] }}</a>
                 </li>
                 {% endfor %}
             </ul>
