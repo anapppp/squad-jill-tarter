@@ -13,5 +13,16 @@
         </p>
     </div>
     {% endfor %}
+
+    <div class="pagination">
+        {% if page > 1 and page <= total_pages or total_pages is none %}
+            <a href="{{ url_for('get_episodes_page', page=page-1) }}" class="btn btn-primary">Página anterior</a>
+        {% endif %}
+
+        <span class="btn btn-primary">Página {{ page }}</span>
+
+        {% if page < total_pages or total_pages is none %}
+            <a href="{{ url_for('get_episodes_page', page=page+1) }}" class="btn btn-primary">Próxima página</a>
+        {% endif %}
 </div>
 {% endblock %}

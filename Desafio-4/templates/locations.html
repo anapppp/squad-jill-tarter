@@ -24,5 +24,17 @@
     </tr>
     {% endfor %}
   </tbody>
-</table>
+  </table>
+  
+<div class="pagination">
+  {% if page > 1 %}
+      <a href="{{ url_for('get_locations_page', page=page-1) }}" class="btn btn-primary">Página anterior</a>
+  {% endif %}
+  
+  <span class="btn btn-primary">Página {{ page }}</span>
+  
+  {% if locations %}
+      <a href="{{ url_for('get_locations_page', page=page+1) }}" class="btn btn-primary">Próxima página</a>
+  {% endif %}
+</div>
 {% endblock %}
