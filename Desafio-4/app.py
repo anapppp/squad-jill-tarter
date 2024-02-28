@@ -107,3 +107,7 @@ def get_episode(id):
     data = response.read()
     dict = json.loads(data)
     return render_template("episode.html", episode=dict)
+
+
+if __name__ == "__main__":
+     app.run(debug=False)
