@@ -8,7 +8,11 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
+<<<<<<< HEAD:.venv/Scripts/activate.bat
 set VIRTUAL_ENV=C:\Users\sarah\squad-jill-tarter\.venv
+=======
+set VIRTUAL_ENV=D:\Documentos\WoMakers\Desafio4\Desafio-4\.venv
+>>>>>>> 6dfc714a372d890dcb79cc1e625d03d6b23f4760:Desafio-4/.venv/Scripts/activate.bat
 
 if not defined PROMPT set PROMPT=$P$G
 

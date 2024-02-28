@@ -1,17 +1,20 @@
 {% extends "layout.html" %}
 
-{% block content%}
+{% block content %}
 
 <div class="row">
 
     <div class="col-sm-3 col-6">
-        <img src="{{profile.image}}" alt="{{profile.name}}" 
-        class="img-fluid img-thumbnail"/>
+        <img src="{{ profile.image }}" alt="{{ profile.name }}" class="img-fluid img-thumbnail"/>
     </div>       
 
-  <div class ="col-sm-3 col-6">
-     <h1 class="h5">{{profile.name}}</h1>
-  </div>
+    <div class="col-sm-3 col-6">
+        <h1 class="h5">{{ profile.name }}</h1>
+        <p>Espécie: {{ profile.species }}</p>
+        <p>Gênero: {{ profile.gender }}</p>
+        <p>Origem: <a href="/location/{{ profile.origin.url.split('/')[-1] }}">{{ profile.origin.name }}</a></p>
+        <p>Localização: <a href="/location/{{ profile.location.url.split('/')[-1] }}">{{ profile.location.name }}</a></p>
+    </div>
 
 </div>
 

@@ -35,6 +35,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
+<<<<<<< HEAD:.venv/Scripts/activate
 # on Windows, a path can contain colons and backslashes and has to be converted:
 if [ "${OSTYPE:-}" = "cygwin" ] || [ "${OSTYPE:-}" = "msys" ] ; then
     # transform D:\path\to\venv to /d/path/to/venv on MSYS
@@ -44,6 +45,10 @@ else
     # use the path as-is
     export VIRTUAL_ENV="C:\Users\sarah\squad-jill-tarter\.venv"
 fi
+=======
+VIRTUAL_ENV="D:\Documentos\WoMakers\Desafio4\Desafio-4\.venv"
+export VIRTUAL_ENV
+>>>>>>> 6dfc714a372d890dcb79cc1e625d03d6b23f4760:Desafio-4/.venv/Scripts/activate
 
 _OLD_VIRTUAL_PATH="$PATH"
 PATH="$VIRTUAL_ENV/Scripts:$PATH"
