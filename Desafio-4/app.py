@@ -6,13 +6,13 @@ import json
 app = Flask(__name__)
 
 
-@app.route("/")
-def get_list_characters_page():
-    url = "https://rickandmortyapi.com/api/character/"
+@app.route("/characters/<int:page>")
+def get_list_characters_page(page=1):
+    url = f"https://rickandmortyapi.com/api/character/?page={page}"
     response = urllib.request.urlopen(url)
     data = response.read()
     dict = json.loads(data)
-    return render_template("characters.html", characters=dict["results"])
+    return render_template("characters.html", characters=dict["results"], page=page)
 
 
 @app.route("/profile/<id>")
@@ -107,3 +107,7 @@ def get_episode(id):
     data = response.read()
     dict = json.loads(data)
     return render_template("episode.html", episode=dict)
+
+@app.route("/")
+def home():
+    return get_list_characters_page()

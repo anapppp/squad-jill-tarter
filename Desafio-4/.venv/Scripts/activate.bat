@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\anapa\Desktop\squad-jill-tarter\Desafio-4\.venv
+set VIRTUAL_ENV=D:\Documentos\WoMakers\Desafio4\Desafio-4\.venv
 
 if not defined PROMPT set PROMPT=$P$G
 

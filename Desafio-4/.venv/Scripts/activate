@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\anapa\Desktop\squad-jill-tarter\Desafio-4\.venv"
+VIRTUAL_ENV="D:\Documentos\WoMakers\Desafio4\Desafio-4\.venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
