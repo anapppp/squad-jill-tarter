@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Detalhes da localização</h1>
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">{{ location.name }}</h3>
+            <p class="card-text">Dimensão: {{ location.dimension }}</p>
+            <p class="card-text">Tipo: {{ location.type }}</p>
+            <h5 class="card-title">Residentes:</h5>
+            <ul class="list-group">
+                {% for character in location.residents %}
+                <li class="list-group-item">
+                    <a href="/profile/{{ character.split('/')[-1] }}" class="card-link">Personagem ID: {{ character.split('/')[-1] }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

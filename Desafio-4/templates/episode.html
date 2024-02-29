@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Detalhes do Episódio</h1>
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">{{ episode.name }}</h3>
+            <p class="card-text">Data de Lançamento: {{ episode.air_date }}</p>
+            <p class="card-text">Código do Episódio: {{ episode.episode }}</p>
+            <h5 class="card-title">Personagens:</h5>
+            <ul class="list-group">
+                {% for character in episode.characters %}
+                <li class="list-group-item">
+                    <a href="/profile/{{ character.split('/')[-1] }}" class="card-link">Personagem ID:{{ character.split('/')[-1] }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

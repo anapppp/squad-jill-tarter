@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row">
+    {% for episode in episodes_list %}
+    <div class="col-sm-3 col-6">
+        <h3 class="h5">{{ episode.id }}</h3>
+        <h3 class="h5">{{ episode.name }}</h3>
+        <h3 class="h5">{{ episode.air_date }}</h3>
+        <h3 class="h5">{{ episode.episode }}</h3>
+        <p>
+            <a href="/episode/{{ episode.id }}" class="btn btn-primary">Ver episódio</a>
+        </p>
+    </div>
+    {% endfor %}
+
+    <div class="pagination">
+        {% if page > 1 and page <= total_pages or total_pages is none %}
+            <a href="{{ url_for('get_episodes_page', page=page-1) }}" class="btn btn-primary">Página anterior</a>
+        {% endif %}
+
+        <span class="btn btn-primary">Página {{ page }}</span>
+
+        {% if page < total_pages or total_pages is none %}
+            <a href="{{ url_for('get_episodes_page', page=page+1) }}" class="btn btn-primary">Próxima página</a>
+        {% endif %}
+</div>
+{% endblock %}

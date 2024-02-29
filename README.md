@@ -25,6 +25,6 @@ Membros:
 
 [Desafio 3 (Semana 5)](./Desafio-3/)
 
-[Desafio 4 (Semana 5)](./Desafio-4/)
+[Desafio 4 (Semana 6)](./Desafio-4/)
 
 [Desafio 5 (Semana 9)](./Desafio-5/)
