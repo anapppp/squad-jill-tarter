@@ -7,8 +7,8 @@
 ### Colaboradoras:
 
 - Rota Localização - Paula Borges
-- Rota Localização/ID - Maisa Rogues
+- Rota Localização/ID - Ana Paula Kelm Soares
 - Rota Episódios - Sarah Affonco
 - Rota Episódios/ID - Ana Paula Kelm Soares
-- Inserir informações na pagina de perfil - Renatta Siqueira
-- Vídeo - 
+- Inserir informações na pagina de perfil - Maisa Rogues
+- Vídeo - Paula Borges e Ana Paula Kelm Soares
