@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row">  
+  <h1 class="location">Localizações - Rick and Morty</h1>
+</div>
+<table class ="table">
+  <thead>
+    <tr>
+     
+      <th>Nome</th>
+      <th>Tipo</th>
+      <th>Dimensão</th>
+      <th>Link perfil localização</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for location in locations %}
+    <tr>
+      <td>"{{location.name}}"</td>
+      <td>"{{location.type}}"</td>
+      <td>"{{location.dimension}}"</td>
+      <td><a href="/location/{{location.id}}">
+        Ver perfil da localização</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+  </table>
+  
+<div class="pagination">
+  {% if page > 1 %}
+      <a href="{{ url_for('get_locations_page', page=page-1) }}" class="btn btn-primary">Página anterior</a>
+  {% endif %}
+  
+  <span class="btn btn-primary">Página {{ page }}</span>
+  
+  {% if locations %}
+      <a href="{{ url_for('get_locations_page', page=page+1) }}" class="btn btn-primary">Próxima página</a>
+  {% endif %}
+</div>
+{% endblock %}
